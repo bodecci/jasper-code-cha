@@ -16,7 +16,7 @@ variable "function_name" {
 variable "timeout_seconds" {
   description = "Timeout for the Lambda function in seconds"
   type        = number
-  default     = 10
+  default     = 60
 }
 
 // set concurrency limit for lambda function to control the number of 
@@ -25,5 +25,5 @@ variable "timeout_seconds" {
 variable "concurrency_limit" {
   description = "Concurrency limit for the Lambda function"
   type        = number
-  default     = 5
+  default     = 10
 }
