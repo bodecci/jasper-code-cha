@@ -1,11 +1,11 @@
 // create Lambda function
 resource "aws_lambda_function" "hello_dillan" {
-  function_name    = var.function_name
-  role             = aws_iam_role.lambda_exec_role.arn
-  handler          = "index.handler"
-  runtime          = "nodejs14.x"
-  filename         = "deployment-file.zip"
-  timeout          = var.timeout_seconds
+  function_name                  = var.function_name
+  role                           = aws_iam_role.lambda_exec_role.arn
+  handler                        = "index.handler"
+  runtime                        = "nodejs14.x"
+  filename                       = "deployment-file.zip"
+  timeout                        = var.timeout_seconds
   reserved_concurrent_executions = var.concurrency_limit
 
   source_code_hash = filebase64("${path.module}/lambda/index.js")
